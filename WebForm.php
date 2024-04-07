@@ -8,9 +8,9 @@
 <form action="" method="post">
     <table border="0">
         <tr><td>Nama</td> <td>: <input type="text" name="nama" placeholder="isikan nama" style="width: 200px;" required></td></tr>
-        <tr><td>Nilai Tugas</td> <td>: <input type="number" name="tugas" placeholder="isikan nilai TUGAS" style="width: 200px;" min="0" max="100" required></td></tr>
-        <tr><td>Nilai UTS</td> <td>: <input type="number" name="uts" placeholder="isikan nilai UTS" style="width: 200px;" min="0" max="100" required></td></tr>
-        <tr><td>Nilai UAS</td> <td>: <input type="number" name="uas" placeholder="isikan nilai UAS" style="width: 200px;" min="0" max="100" required></td></tr>
+        <tr><td>Nilai Tugas</td> <td>: <input type="number" name="tugas" placeholder="isikan nilai TUGAS" style="width: 200px;" min="0" max="30" required></td></tr>
+        <tr><td>Nilai UTS</td> <td>: <input type="number" name="uts" placeholder="isikan nilai UTS" style="width: 200px;" min="0" max="30" required></td></tr>
+        <tr><td>Nilai UAS</td> <td>: <input type="number" name="uas" placeholder="isikan nilai UAS" style="width: 200px;" min="0" max="40" required></td></tr>
         <tr><td></td> <td><input type="submit" name="submit" value="kirim"></td></tr>
     </table>
 </form>
@@ -18,9 +18,9 @@
 <?php
 if(isset($_POST['submit'])) {
     $nama = $_POST['nama'];
-    $tugas = $_POST['tugas'] * (30 / 100); // Bobot nilai tugas adalah 30
-    $uts = $_POST['uts'] * (30 / 100); // Bobot nilai UTS adalah 30
-    $uas = $_POST['uas'] * (40 / 100); // Bobot nilai UAS adalah 40
+    $tugas = $_POST['tugas'];
+    $uts = $_POST['uts'];
+    $uas = $_POST['uas'];
 
     // Menghitung total nilai
     $total = $tugas + $uts + $uas;
